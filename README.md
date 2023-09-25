@@ -61,7 +61,8 @@ public class Connector {
     }
 }
 ```
-Then in order to use
+### Ejemplo de Uso:
+
 ```java
 public class Main {
     public static void main(String[] args) {
