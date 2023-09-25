@@ -2,6 +2,7 @@ package com.github.angel.raa.modules.singleton;
 
 public class Connector {
     private static volatile Connector instance;
+
     private Connector() {
         System.out.println("Connector created");
     }
