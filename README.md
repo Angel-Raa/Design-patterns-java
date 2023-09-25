@@ -23,7 +23,7 @@ El Patrón Singleton es un diseño de software que se utiliza para garantizar qu
 
 ## Ejemplo programático:
 
-A continuación, se presenta un ejemplo de implementación de un Singleton en Java:
+Para crear un singleton, haga que el constructor sea privado, deshabilite la clonación, deshabilite la extensión y cree una variable estática para albergar la instancia.
 
 ```java
 public class Connector {
@@ -60,6 +60,22 @@ public class Connector {
         System.out.println("Disconnecting.....");
     }
 }
+```
+Then in order to use
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Obtener la instancia única del Connector
+        Connector connector1 = Connector.getInstance();
+        
+        // Intentar crear otra instancia, pero obtendremos la misma instancia creada previamente
+        Connector connector2 = Connector.getInstance();
+        
+        // Verificar si connector1 y connector2 son la misma instancia
+        System.out.println(connector1 == connector2); // true
+    }
+}
+```
 
 
 
