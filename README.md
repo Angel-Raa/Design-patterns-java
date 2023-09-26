@@ -90,12 +90,12 @@ El patrón Prototype es un patrón de diseño creacional que permite crear nuevo
 
 ### Desventajas:
 
-1. El código cliente puede depender de la existencia del prototipo.
-2. El patrón Prototype puede ser menos eficiente que otros patrones de diseño creacional, como Factory Method o Abstract Factory.
+1. **Eficiencia relativa:** El código cliente puede depender de la existencia del prototipo.
+2. **Dependencia del prototipo:** Puede ser menos eficiente que otros patrones creacionales, como Factory Method o Abstract Factory.
 
 
 #### Ejemplo programático: 
-El siguiente código muestra cómo usar la interfaz Prototype para clonar una lista de productos:
+Supongamos que necesitamos gestionar listas de productos que se actualizan con frecuencia. En este caso, el prototipo podría ser una lista vacía. Cuando se requiera una nueva lista, podemos clonar el prototipo y luego actualizar la lista clonada con los datos necesarios.
 ```java
 public interface Prototype<T extends Prototype<T>> extends Cloneable {
     T clone();
