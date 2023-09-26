@@ -104,7 +104,7 @@ public interface Prototype<T extends Prototype<T>> extends Cloneable {
     T reset();   // // Restablece el objeto a su estado inicial (opcional)
 }
 
-// 
+
 // Clase PrototypeList que implementa la interfaz Prototype para listas
 public class PrototypeList implements Prototype {
     private String name;
@@ -147,7 +147,7 @@ public class PrototypeList implements Prototype {
     }
 }
 
-// // Clase Products que implementa la interfaz Prototype para productos
+// Clase Products que implementa la interfaz Prototype para productos
 public class Products implements Prototype {
 
     private String name;
