@@ -114,6 +114,31 @@ public class PrototypeList implements Prototype {
         this.name = name;
     }
 
+     @Override
+    public Prototype deepClone() {
+        PrototypeList clone = new PrototypeList(name);
+        List<Products> products = new ArrayList<>();
+        List<Prototype> values = productsList.stream()
+                .map(Products::clone).collect(Collectors.toList());
+        products.add((Products) values);
+        clone.setProducts(products);
+        return clone;
+    }
+
+    @Override
+    public Prototype reset() {
+        if (productsList.isEmpty()) {
+            return null;
+        }
+
+        PrototypeList clone = new PrototypeList(name);
+        List<Products> products = new ArrayList<>();
+        products.addAll(productsList);
+        clone.setProducts(products);
+
+        return clone;
+    }
+
     @Override
     public Prototype clone() {
         PrototypeList clone = new PrototypeList(name);
