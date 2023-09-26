@@ -95,5 +95,79 @@ El patrón Prototype es un patrón de diseño creacional que permite crear nuevo
 
 
 #### Ejemplo programático: 
+El siguiente código muestra cómo usar la interfaz Prototype para clonar una lista de productos:
+```java
+public class PrototypeList implements Prototype {
+    private String name;
+    private List<Products> productsList;
 
+    public PrototypeList(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public Prototype clone() {
+        PrototypeList clone = new PrototypeList(name);
+        clone.setProducts(productsList);
+        return clone;
+    }
+}
+
+public class Products implements Prototype {
+
+    private String name;
+    private String description;
+    private int price;
+    private String[] items;
+
+    public Products(String name, String description, int price, String[] items) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.items = items;
+    }
+
+    @Override
+    public Prototype clone() {
+        Products clone = new Products(name, description, price, items);
+        return clone;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Lista de productos
+        List<Products> productsList =
+                List.of(new Products("Producto 1", "Este es el primer producto.", 100, new String[]{"Item 1", "Item 2"}),
+                        new Products("Producto 2", "Este es el segundo producto.", 200, new String[]{"Item 1", "Item 2"}));
+
+        // Crear una lista prototipo de productos
+        PrototypeList list = new PrototypeList("Listado");
+        list.setProducts(productsList);
+
+        // Clonar la lista prototipo
+        PrototypeList clone = (PrototypeList) list.clone();
+
+        // Cambiar el precio de los productos en la lista clonada
+        for (Products product : clone.getProducts()) {
+            product.setPrice(product.getPrice() * 2);
+        }
+
+        // Imprimir la lista original y la lista clonada
+        System.out.println(list);
+        System.out.println(clone);
+    }
+}
+``` 
+    
+
+
+
+
+
+
+
+
+
+    
 
