@@ -97,13 +97,15 @@ El patrón Prototype es un patrón de diseño creacional que permite crear nuevo
 #### Ejemplo programático: 
 Supongamos que necesitamos gestionar listas de productos que se actualizan con frecuencia. En este caso, el prototipo podría ser una lista vacía. Cuando se requiera una nueva lista, podemos clonar el prototipo y luego actualizar la lista clonada con los datos necesarios.
 ```java
+// Definición de la interfaz Prototype que permite la clonación de objetos
 public interface Prototype<T extends Prototype<T>> extends Cloneable {
-    T clone();
-    T deepClone();
-    T reset();
-
-
+    T clone();   // Clona el objeto 
+    T deepClone(); // Realiza una clonación profunda (si es necesario)
+    T reset();   // // Restablece el objeto a su estado inicial (opcional)
 }
+
+// 
+// Clase PrototypeList que implementa la interfaz Prototype para listas
 public class PrototypeList implements Prototype {
     private String name;
     private List<Products> productsList;
@@ -120,6 +122,7 @@ public class PrototypeList implements Prototype {
     }
 }
 
+// // Clase Products que implementa la interfaz Prototype para productos
 public class Products implements Prototype {
 
     private String name;
