@@ -78,5 +78,22 @@ public class Main {
 }
 ```
 
+## 🐑 Prototype 
+
+El patrón Prototype es un patrón de diseño creacional que permite crear nuevos objetos clonando un prototipo existente. Este patrón es útil cuando la creación de un objeto es compleja o costosa, o cuando se necesita crear una gran cantidad de objetos similares.
+
+### Ventajas:
+
+1. **Eficiente:** La clonación es una operación más eficiente que la creación de un objeto desde cero.
+2. **Flexible:**  El patrón Prototype permite crear nuevos objetos sin tener que modificar el código fuente del objeto prototipo.
+3. **Mantenible:** El patrón Prototype puede ayudar a reducir la complejidad del código, al ocultar la implementación de la clonación.
+
+### Desventajas:
+
+1. El código cliente puede depender de la existencia del prototipo.
+2. El patrón Prototype puede ser menos eficiente que otros patrones de diseño creacional, como Factory Method o Abstract Factory.
+
+
+#### Ejemplo programático: 
 
 
