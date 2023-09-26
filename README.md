@@ -97,6 +97,13 @@ El patrón Prototype es un patrón de diseño creacional que permite crear nuevo
 #### Ejemplo programático: 
 El siguiente código muestra cómo usar la interfaz Prototype para clonar una lista de productos:
 ```java
+public interface Prototype<T extends Prototype<T>> extends Cloneable {
+    T clone();
+    T deepClone();
+    T reset();
+
+
+}
 public class PrototypeList implements Prototype {
     private String name;
     private List<Products> productsList;
@@ -160,7 +167,12 @@ public class Main {
 }
 ``` 
     
+### Output: 
 
+7a81197d
+PrototypeList{name='Listado', productsList=[27716f4Products{name='Producto 1', description='Este es el primer producto.', price='100', items=[Item 1, Item 2]}, 1be6f5c3Products{name='Producto 2', description='Este es el segundo producto.', price='200', items=[Item 1, Item 2]}]}
+6b884d57
+PrototypeList{name='Listado', productsList=[27716f4Products{name='Producto 1', description='Este es el primer producto.', price='200', items=[Item 1, Item 2]}, 1be6f5c3Products{name='Producto 2', description='Este es el segundo producto.', price='400', items=[Item 1, Item 2]}]}
 
 
 
