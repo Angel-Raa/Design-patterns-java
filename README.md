@@ -168,12 +168,13 @@ public class Main {
 ``` 
     
 ### Output: 
-
+```bash
 Lista Original:
 PrototypeList{name='Listado', productsList=[Products{name='Producto 1', description='Este es el primer producto.', price=100, items=[Item 1, Item 2]}, Products{name='Producto 2', description='Este es el segundo producto.', price=200, items=[Item 1, Item 2]}]}
 
 Lista Clonada:
 PrototypeList{name='Listado', productsList=[Products{name='Producto 1', description='Este es el primer producto.', price=200, items=[Item 1, Item 2]}, Products{name='Producto 2', description='Este es el segundo producto.', price=400, items=[Item 1, Item 2]}]}
+```
 
 
 
