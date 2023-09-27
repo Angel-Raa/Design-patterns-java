@@ -211,12 +211,15 @@ El patrón de diseño Builder es un patrón de creación utilizado en la program
 ### Ventajas:
 
 1. **Separación de preocupaciones:**  El patrón Builder separa la lógica de construcción de un objeto complejo de su estructura y representación. Esto permite que el código de construcción sea independiente de la estructura del objeto, lo que facilita la creación de objetos con diferentes configuraciones.
+   
 2. **Reutilización de código:**  Puedes reutilizar el código del Builder para crear diferentes objetos con la misma estructura pero con diferentes configuraciones. Esto reduce la duplicación de código.
+   
 3. **Mejora la legibilidad del código:** Al utilizar un Builder, el proceso de construcción se vuelve más legible y expresivo. Los nombres de los métodos del Builder suelen ser descriptivos y ayudan a comprender cómo se configura el objeto.
    
 ### Desventajas:
 
 1. **Complejidad adicional:**  La implementación de un Builder agrega una capa de complejidad al código, ya que requiere la creación de una clase Builder adicional y la llamada a métodos específicos para configurar el objeto. Esto puede aumentar la complejidad si no se gestiona adecuadamente.
+   
 2. **Posible sobrecarga de diseño:** En casos simples donde la construcción del objeto no es tan compleja o variable, el uso de un patrón Builder puede ser excesivo y agregar una sobrecarga de diseño innecesaria.
 
    
