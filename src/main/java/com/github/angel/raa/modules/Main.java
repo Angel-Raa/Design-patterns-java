@@ -1,26 +1,20 @@
 package com.github.angel.raa.modules;
 
-import com.github.angel.raa.modules.prototype.PrototypeList;
-import com.github.angel.raa.modules.prototype.models.Products;
-
-import java.util.List;
+import com.github.angel.raa.modules.Builder.models.Address;
+import com.github.angel.raa.modules.Builder.models.Contact;
+import com.github.angel.raa.modules.Builder.models.Employee;
 
 public class Main {
     public static void main(String[] args) {
-        //Listado
-        PrototypeList list = new PrototypeList("Listado");
-        List<Products> productsList =
-                List.of(new Products("Producto 1","Este es el primer producto.", 100, new String[]{"Item 1", "Item 2"}),
-                new Products("Producto 2", "Este es el segundo producto.", 200, new String[]{"Item 1", "Item 2"}));
+        Employee employee = new Employee.EmployeeBuilder()
+                .setName("Angel Aguero")
+                .setAge(22)
+                .setGender("M")
+                .setAddress(new Address("123 Main St", "Example", "Santo Domingo", "RD"))
+                .setContact(new Contact("800-999-1212", "angel.@gmail.com", "com.angel.profile"))
+                .build();
+        System.out.println(employee);
 
-        list.setProducts(productsList);
-        System.out.println(list);
-        //Clonado
-        PrototypeList clone = (PrototypeList) list.clone();
-        for(Products product: clone.getProducts()){
-            product.setPrice(product.getPrice() * 2);
-        }
-        System.out.println(clone);
 
     }
 }

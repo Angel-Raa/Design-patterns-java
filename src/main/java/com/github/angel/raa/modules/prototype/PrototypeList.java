@@ -5,7 +5,6 @@ import com.github.angel.raa.modules.prototype.models.Products;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PrototypeList implements Prototype {
     private String name;
