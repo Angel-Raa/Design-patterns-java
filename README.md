@@ -243,11 +243,7 @@ public class Employee {
 }
 ```
 Esta clase representa a un empleado. Tiene cinco propiedades: nombre, edad, género, contacto y dirección.
-
-```
-
-import com.github.angel.raa.modules.Builder.interfaces.IBuilder;
-
+```java
 public class Employee {
     private String name;
     private int age;
@@ -369,12 +365,43 @@ public class Employee {
 
 }
 ```
-
 Esta clase interna es un constructor para la clase Employee. Tiene métodos para establecer cada una de las propiedades de un objeto Employee. También tiene un método build() que devuelve un nuevo objeto Employee con las propiedades que se han establecido.
 
 
 #### Ejemplo de Uso: 
+Para crear un nuevo objeto Employee usando el patrón de constructor, primero creará una nueva instancia de la clase EmployeeBuilder. Luego, llamará a los métodos setName(), setAge(), setGender(), setAddress() y setContact() para establecer las propiedades del nuevo objeto Employee. Finalmente, llamará al método build() para crear el nuevo objeto Employee.
 
+```java
+public class Main {
+    public static void main(String[] args) {
+        Employee employee = new Employee.EmployeeBuilder()
+                .setName("Angel Aguero")
+                .setAge(22)
+                .setGender("M")
+                .setAddress(new Address("123 Main St", "Example", "Santo Domingo", "RD"))
+                .setContact(new Contact("800-999-1212", "angel.@gmail.com", "com.angel.profile"))
+                .build();
+        System.out.println(employee);
+    }
+}
+```
+### Output: 
+```bash
+
+Employee Information:
+Name: Angel Aguero
+Age: 22
+Gender: M
+Contact: Contact Information:
+Phone: 800-999-1212
+Email: angel.@gmail.com
+LinkedIn: com.angel.profile
+Address: Address Information:
+Street: 123 Main St
+City: Example
+State: Santo Domingo
+country: RD
+```
 
 
 
