@@ -3,7 +3,7 @@
 Los patrones de diseño, en el contexto de la programación y el desarrollo de software, son soluciones generales y reutilizables para problemas comunes que los programadores enfrentan al diseñar y construir aplicaciones. Estos patrones proporcionan un enfoque probado y eficaz para resolver problemas específicos de diseño de software, lo que facilita la creación de código más mantenible, escalable y robusto.
 
 
-## 💍 Patrón Singleton
+## 💍 Singleton
 
 El Patrón Singleton es un diseño de software que se utiliza para garantizar que una clase tenga una única instancia en una aplicación y proporcionar un punto de acceso global a esa instancia. Esta técnica tiene ventajas y desventajas que deben considerarse al implementarla.
 
@@ -204,6 +204,22 @@ Lista Clonada:
 PrototypeList{name='Listado', productsList=[Products{name='Producto 1', description='Este es el primer producto.', price=200, items=[Item 1, Item 2]}, Products{name='Producto 2', description='Este es el segundo producto.', price=400, items=[Item 1, Item 2]}]}
 ```
 
+## 👷 Builder 
+
+El patrón de diseño Builder es un patrón de creación utilizado en la programación orientada a objetos para construir objetos complejos paso a paso. Este patrón separa la construcción de un objeto complejo de su representación, permitiendo que el mismo proceso de construcción pueda crear diferentes representaciones del objeto.
+
+### Ventajas:
+
+1. **Separación de preocupaciones:**  El patrón Builder separa la lógica de construcción de un objeto complejo de su estructura y representación. Esto permite que el código de construcción sea independiente de la estructura del objeto, lo que facilita la creación de objetos con diferentes configuraciones.
+2. **Reutilización de código:**  Puedes reutilizar el código del Builder para crear diferentes objetos con la misma estructura pero con diferentes configuraciones. Esto reduce la duplicación de código.
+3. **Mejora la legibilidad del código:** Al utilizar un Builder, el proceso de construcción se vuelve más legible y expresivo. Los nombres de los métodos del Builder suelen ser descriptivos y ayudan a comprender cómo se configura el objeto.
+   
+### Desventajas:
+
+1. **Complejidad adicional:**  La implementación de un Builder agrega una capa de complejidad al código, ya que requiere la creación de una clase Builder adicional y la llamada a métodos específicos para configurar el objeto. Esto puede aumentar la complejidad si no se gestiona adecuadamente.
+2. **Posible sobrecarga de diseño:** En casos simples donde la construcción del objeto no es tan compleja o variable, el uso de un patrón Builder puede ser excesivo y agregar una sobrecarga de diseño innecesaria.
+
+   
 
 
 
