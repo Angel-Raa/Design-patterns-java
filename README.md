@@ -222,9 +222,158 @@ El patrón de diseño Builder es un patrón de creación utilizado en la program
    
 2. **Posible sobrecarga de diseño:** En casos simples donde la construcción del objeto no es tan compleja o variable, el uso de un patrón Builder puede ser excesivo y agregar una sobrecarga de diseño innecesaria.
 
-   
+
+#### Ejemplo programático: 
+
+#### Interfaz:
+```java
+public interface IBuilder<T> {
+    T build();
+}
+```
+
+Esta interfaz define un método único, build(), que devuelve una instancia de la clase para la que es el constructor.
+```java
+public class Employee {
+    private String name;
+    private int age;
+    private String gender;
+    private Contact contact;
+    private Address address;
+}
+```
+Esta clase representa a un empleado. Tiene cinco propiedades: nombre, edad, género, contacto y dirección.
+
+```
+
+import com.github.angel.raa.modules.Builder.interfaces.IBuilder;
+
+public class Employee {
+    private String name;
+    private int age;
+    private String gender;
+    private Contact contact;
+    private Address address;
+
+    public Employee() {
+    }
+
+    public Employee(String name, int age, String gender, Contact contact, Address address) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.contact = contact;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee Information:\n" +
+                "Name: " + name + "\n" +
+                "Age: " + age + "\n" +
+                "Gender: " + gender + "\n" +
+                "Contact: " + contact + "\n" +
+                "Address: " + address;
+    }
+
+    public static class EmployeeBuilder implements IBuilder<Employee> {
+        private String name;
+        private int age;
+        private String gender;
+        private Contact contact;
+        private Address address;
+
+        public EmployeeBuilder() {
+        }
+
+        public EmployeeBuilder setAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public EmployeeBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public EmployeeBuilder setGender(String gender) {
+            this.gender = gender;
+            return this;
+        }
+
+        public EmployeeBuilder setContact(Contact contact) {
+            this.contact = contact;
+            return this;
+        }
+
+        public EmployeeBuilder setContact(String phone, String email, String linkedin) {
+            this.contact = new Contact(phone, email, linkedin);
+            return this;
+        }
+
+        public EmployeeBuilder setAddress(Address address) {
+            this.address = address;
+            return this;
+        }
+
+        public EmployeeBuilder setAddress(String street, String city, String state, String country) {
+            this.address = new Address(street, city, state, country);
+            return this;
+        }
+
+        @Override
+        public Employee build() {
+            return new Employee(name, age, gender, contact, address);
+        }
+    }
+
+}
+```
+
+Esta clase interna es un constructor para la clase Employee. Tiene métodos para establecer cada una de las propiedades de un objeto Employee. También tiene un método build() que devuelve un nuevo objeto Employee con las propiedades que se han establecido.
 
 
+#### Ejemplo de Uso: 
 
 
 
