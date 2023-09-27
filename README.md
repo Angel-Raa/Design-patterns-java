@@ -385,23 +385,6 @@ public class Main {
     }
 }
 ```
-### Output: 
-```bash
-
-Employee Information:
-Name: Angel Aguero
-Age: 22
-Gender: M
-Contact: Contact Information:
-Phone: 800-999-1212
-Email: angel.@gmail.com
-LinkedIn: com.angel.profile
-Address: Address Information:
-Street: 123 Main St
-City: Example
-State: Santo Domingo
-country: RD
-```
 
 
 
